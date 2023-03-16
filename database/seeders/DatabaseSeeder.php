@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Author;
 use App\Models\Course;
 use App\Models\Platform;
 use Illuminate\Database\Seeder;
@@ -33,7 +34,7 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $topics =['Eloquent','Validation','Testing','Authorization'];
+        $topics =['Eloquent','Validation','Testing','Authorization', 'Wordpress'];
         foreach($topics as $item){
             Topic::create([
                 'name' => $item,
@@ -47,11 +48,28 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        $authors = ['Rasel Ahmed','Sagor','Abdur Rahman'];
+        foreach($authors as $item){
+            Author::create([
+                'name' => $item,
+            ]);
+        }
+
+
+
         // create 50 user
         User::factory(50)->create();
 
         //create 100 course
       Course::factory(100)->create();
 
+      $courses = Course::all();
+      foreach($courses as $course){
+            $topics = Topic::all()->random(rand(1,5))->pluck('id')->toArray();
+            $course->topics()->attach($topics);
+
+            $authors = Author::all()->random(rand(1,3))->pluck('id')->toArray();
+            $course->authors()->attach($authors);
+       }
     }
 }
