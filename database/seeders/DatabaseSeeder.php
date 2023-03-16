@@ -27,10 +27,28 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $series = ['PHP','JAVASCRIPT','Wordpress','Laravel'];
+        $series = [
+            [
+                'name' => 'PHP',
+                'image' =>'https://cdn.pixabay.com/photo/2017/08/05/11/16/log0-2582748_960_720.png'
+            ],
+            [
+                'name' => 'JAVASCRIPT',
+                'image' =>'https://cdn.pixabay.com/photo/2017/08/05/11/16/log0-2582748_960_720.png'
+            ],
+            [
+                'name' => 'Wordpress',
+                'image' =>'https://cdn.pixabay.com/photo/2017/08/05/11/16/log0-2582748_960_720.png'
+            ],
+            [
+                'name' => 'Laravel',
+                'image' =>'https://cdn.pixabay.com/photo/2017/08/05/11/16/log0-2582748_960_720.png'
+            ]
+        ];
         foreach($series as $item){
             Series::create([
-                'name' => $item,
+                'name' => $item['name'],
+                'image' => $item['image'],
             ]);
         }
 
@@ -70,6 +88,9 @@ class DatabaseSeeder extends Seeder
 
             $authors = Author::all()->random(rand(1,3))->pluck('id')->toArray();
             $course->authors()->attach($authors);
+
+            $series = Series::all()->random(rand(1,4))->pluck('id')->toArray();
+            $course->series()->attach($series);
        }
     }
 }
