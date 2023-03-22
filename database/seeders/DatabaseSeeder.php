@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Author;
 use App\Models\Course;
 use App\Models\Platform;
+use App\Models\Review;
 use Illuminate\Database\Seeder;
 use App\Models\Series;
 use App\Models\Topic;
@@ -27,6 +28,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        User::create([
+            'name' => 'Admin',
+            'email' => 'hi@sagor.me',
+            'password' => bcrypt('password'),
+            'type' => 1,
+        ]);
         $series = [
             [
                 'name' => 'PHP',
@@ -70,12 +77,7 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        $authors = ['Rasel Ahmed','Sagor','Abdur Rahman'];
-        foreach($authors as $item){
-            Author::create([
-                'name' => $item,
-            ]);
-        }
+       Author::factory(10)->create();
 
 
 
@@ -96,5 +98,7 @@ class DatabaseSeeder extends Seeder
             $series = Series::all()->random(rand(1,4))->pluck('id')->toArray();
             $course->series()->attach($series);
        }
+
+       Review::factory(100)->create();
     }
 }
