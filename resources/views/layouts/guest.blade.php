@@ -61,16 +61,16 @@
                     <h2 class="text-lg-primary-2 text-white">Course by Series</h2>
                     <ul class="mt-5">
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Laravel</a>
+                        <a href="{{route('archive',['series', 'laravel'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Laravel</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">PHP</a>
+                        <a href="{{route('archive',['series', 'PHP'])}}" class="text-links text-gray-100 text-base before:text-gray-100">PHP</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Livewire</a>
+                        <a href="{{route('archive',['series', 'Livewire'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Livewire</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Vue.js</a>
+                        <a href="{{route('archive',['series', 'Vue.js'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Vue.js</a>
                     </li>
                     </ul>
                 </div>
@@ -78,13 +78,13 @@
                     <h2 class="text-lg-primary-2 text-white">Course by Duration</h2>
                     <ul class="mt-5">
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">1-5 hours</a>
+                        <a href="{{route('archive',['duration', '1-5-hours'])}}" class="text-links text-gray-100 text-base before:text-gray-100">1-5 hours</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">5-10 hours</a>
+                        <a href="{{route('archive',['duration', '5-10-hours'])}}" class="text-links text-gray-100 text-base before:text-gray-100">5-10 hours</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">10+ hours</a>
+                        <a href="{{route('archive',['duration', '10+hours'])}}" class="text-links text-gray-100 text-base before:text-gray-100">10+ hours</a>
                     </li>
                     </ul>
                 </div>
@@ -92,13 +92,13 @@
                     <h2 class="text-lg-primary-2 text-white">Course by Level</h2>
                     <ul class="mt-5">
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Beginner</a>
+                        <a href="{{route('archive',['level', 'Beginner'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Beginner</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Intermediate</a>
+                        <a href="{{route('archive',['level', 'Intermediate'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Intermediate</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Advanced</a>
+                        <a href="{{route('archive',['level', 'Advanced'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Advanced</a>
                     </li>
                     </ul>
                 </div>
@@ -106,13 +106,13 @@
                     <h2 class="text-lg-primary-2 text-white">Course by Platform</h2>
                     <ul class="mt-5">
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Laracasts</a>
+                        <a href="{{route('archive',['platform', 'Laracasts'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Laracasts</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Laravel Daily</a>
+                        <a href="{{route('archive',['platform', 'Laravel Daily'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Laravel Daily</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Codecourse</a>
+                        <a href="{{route('archive',['platform', 'Codecourse'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Codecourse</a>
                     </li>
                     </ul>
                 </div>
@@ -120,16 +120,16 @@
                     <h2 class="text-lg-primary-2 text-white">Course by Topics</h2>
                     <ul class="mt-5">
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Eloquent</a>
+                        <a href="{{route('archive',['topic', 'Eloquent'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Eloquent</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Validation</a>
+                        <a href="{{route('archive',['topic', 'Validation'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Validation</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Refactoring</a>
+                        <a href="{{route('archive',['topic', 'Refactoring'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Refactoring</a>
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-links text-gray-100 text-base before:text-gray-100">Testing</a>
+                        <a href="{{route('archive',['topic', 'Testing'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Testing</a>
                     </li>
                     </ul>
                 </div>

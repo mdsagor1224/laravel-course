@@ -34,21 +34,26 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
             'type' => 1,
         ]);
+
         $series = [
             [
                 'name' => 'PHP',
+                'slug' => 'php',
                 'image' =>'https://cdn.pixabay.com/photo/2017/08/05/11/16/log0-2582748_960_720.png'
             ],
             [
                 'name' => 'JAVASCRIPT',
+                'slug' => 'javascript',
                 'image' =>'https://cdn.pixabay.com/photo/2017/08/05/11/16/log0-2582748_960_720.png'
             ],
             [
-                'name' => 'Wordpress',
+                'name' => 'Vue.js',
+                'slug' => 'vuejs',
                 'image' =>'https://cdn.pixabay.com/photo/2017/08/05/11/16/log0-2582748_960_720.png'
             ],
             [
                 'name' => 'Laravel',
+                'slug' => 'laravel',
                 'image' =>'https://cdn.pixabay.com/photo/2017/08/05/11/16/log0-2582748_960_720.png'
             ]
         ];
@@ -56,6 +61,8 @@ class DatabaseSeeder extends Seeder
             Series::create([
                 'name' => $item['name'],
                 'image' => $item['image'],
+                'slug' => $item['slug'],
+
             ]);
         }
 
