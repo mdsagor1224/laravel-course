@@ -105,9 +105,11 @@
                 <div>
                     <h2 class="text-lg-primary-2 text-white">Course by Platform</h2>
                     <ul class="mt-5">
+
                     <li class="mb-2">
                         <a href="{{route('archive',['platform', 'Laracasts'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Laracasts</a>
                     </li>
+                    
                     <li class="mb-2">
                         <a href="{{route('archive',['platform', 'Laravel Daily'])}}" class="text-links text-gray-100 text-base before:text-gray-100">Laravel Daily</a>
                     </li>

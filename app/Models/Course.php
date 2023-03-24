@@ -49,7 +49,7 @@ class Course extends Model
         }elseif($value == 2){
             return 'Advanced';
         }else{
-            return 'Beginner';
+            return 'Beginner'; 
         }
     }
 }

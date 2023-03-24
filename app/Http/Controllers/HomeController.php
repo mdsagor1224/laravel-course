@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Series;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,10 +46,12 @@ class HomeController extends Controller
                 if(empty($item)){
                     return abort(404);
                 }
-                $title = 'Courses on'.$item->name;
+                $title = 'Courses on' . $item->name;
 
                 $courses = $item->courses()->paginate(12);
-            } elseif ($archive_type === 'duration') {
+            } 
+            
+            elseif ($archive_type === 'duration') {
                 if($slug == '1-5-hours'){
                     $item = '1-5 hours';
                     $duration_db_key = 0;
@@ -60,9 +63,37 @@ class HomeController extends Controller
                     $duration_db_key = 2;
                 }
 
-                $title = 'Courses with duration' . $item;
+                $title = 'Courses with duration ' . $item;
                 $courses = Course::where('duration', $duration_db_key)->paginate(12);
             }
+            
+
+            if($archive_type === 'topic'){
+                $item = Topic::where('slug', $slug)->first();
+                if(empty($item)){
+                    return abort(404);
+                }
+
+                $title = 'Courses with Topic ' . $item->name;
+                $courses = $item->courses()->paginate(12);
+            }
+
+
+             // if($archive_type === 'topic'){
+            //     $title = Topic::where('slug', $slug)->first();
+
+            //     if(empty($title)){
+                    
+            //         return abort(404);
+            //     }
+            //     $courses = $title->courses()->paginate(12);
+                
+            // }
+
+           
+        
+
+            
 
 
 
@@ -90,6 +121,7 @@ class HomeController extends Controller
          return view('archive.single',[
             'title' => $title,
             'courses' => $courses,
+            
          ]);
         }
 }
